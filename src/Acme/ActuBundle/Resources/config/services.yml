@@ -1,0 +1,4 @@
+services:
+#    acme_actu.example:
+#        class: Acme\ActuBundle\Example
+#        arguments: ["@service_id", "plain_value", "%parameter%"]

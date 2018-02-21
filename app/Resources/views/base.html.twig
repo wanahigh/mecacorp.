@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    {{ sonata_seo_title() }}
+
+    {{ sonata_seo_metadatas() }}
+    {% block head_javascripts %}
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.1/moment-with-locales.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.js" charset="UTF-8"></script>
+        <script src="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/fc-3.2.2/fh-3.1.2/r-2.1.0/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/js/bootstrap-editable.min.js"></script>
+        <script src="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.js"></script>
+
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+        <script src="{{ asset('bundles/starrating/js/rating.js') }}"></script>
+
+        <script src="{{ asset('bundles/sgdatatables/js/pipeline.js') }}"></script>
+
+        <script src="{{ asset('bundles/fosjsrouting/js/router.js') }}"></script>
+        <script src="{{ path('fos_js_routing_js', {'callback': 'fos.Router.setData'}) }}"></script>
+    {% endblock %}
+    <link rel="icon" type="image/x-icon" href="{{ asset('../../../images/vehicules-epoque.jpeg') }}" />
+
+    <meta charset="UTF-8" />
+    {#<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">#}
+
+    {% block stylesheets %}
+        <link rel="stylesheet" type="text/css" href="{{ asset('bundles/starrating/css/rating.css') }}" />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/v/bs/jszip-2.5.0/pdfmake-0.1.18/dt-1.10.12/b-1.2.2/b-colvis-1.2.2/b-flash-1.2.2/b-html5-1.2.2/b-print-1.2.2/fc-3.2.2/fh-3.1.2/r-2.1.0/datatables.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-daterangepicker/2.1.25/daterangepicker.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/x-editable/1.5.1/bootstrap3-editable/css/bootstrap-editable.css">
+        <link rel="stylesheet" href="https://cdn.rawgit.com/noelboss/featherlight/1.7.1/release/featherlight.min.css">
+        <script src={{ asset('https://code.jquery.com/jquery-3.2.1.js') }} integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+        <script src={{ asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js') }}></script>
+         <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link rel="stylesheet" href={{ asset('https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css') }}>
+        <link rel="stylesheet" href="{{ asset('../../../css/style.css') }}">
+        <link rel="stylesheet" href="{{ asset('../../../js/index.js') }}">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.3/dist/instantsearch.min.css">
+{% endblock %}
+
+
+</head>
+<body>
+
+<div class="navbar-upper pushpin-demo-nav ">
+    <nav class="z-depth-10 ">
+        <div   class="nav-wrapper white">
+            <div class="row">
+                <div class="col s12">
+                    <a href="/" class="brand-logo" style="display:block;float:left;"><img src="{{ asset('../../../images/logo-filiere-spmeca-01.png') }}"></a>
+                    <ul id="nav-mobile"  class="right hide-on-med-and-down">
+
+                        <li>
+
+                            <div id="shortcuts-zone">
+                                <form id="jq_search">
+                                    <input style="color:green" type="search" placeholder="Google Recherche"/>
+                                    <input type="submit" value="Search"/>
+                                    <a href="#"  target="_blank"></a>
+                                </form>
+                            </div>
+                        </li>
+                         <li><a href="#modal1"><i class="material-icons">search</i></a></li>
+
+
+
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+    </nav>
+</div>
+
+
+
+
+<div class="navbar-lower green z-depth-5 ">
+    <nav class="z-depth-10 nav-extended white z-depth-5">
+        <div class="nav-wrapper">
+            <div class="row">
+                <div class="col s12 ">
+                    <a href="#" data-activates="mobile-demo" class="button-collapse show-on-small"><i class="material-icons">menu</i></a>
+                    <a class="fadeInLogo brand-logo animated slideInUp">
+
+                        <!-- <img src="https://materializecss.com/res/materialize.svg" alt="" style="margin-top:12px;" height="40px"/> -->
+                        <i style="color:red;" class="large material-icons">important_devices</i>
+                    </a>
+                    <ul id="nav-mobile" class="right hide-on-med-and-down ">
+                        <li><a href="/Filial">La Filière</a></li>
+                        <li><a href="/entity_advert">L'actu</a></li>
+                        <li><a href="/actors">Les Acteurs</a></li>
+                        <li><a href="/contact">Contact</a></li>
+                        <li><a >
+                        {% if is_granted("IS_AUTHENTICATED_REMEMBERED") %}
+                        {#{{ app.user.username }}#}
+
+                        <a class="chip" href="{{ path('fos_user_security_logout') }}">Déconnexion</a>
+                        {% else %}
+                        <a id="ULnone" class="chip"  href="{{ path('fos_user_security_login') }}">Connexion</a>
+                        {% endif %}</a>
+                        </ul>
+
+                </div>
+                <div class="nav-content ">
+
+                        <ul class="side-nav" id="mobile-demo">
+
+
+                            <li class="sidenav-header ">
+                                <div class="row">
+                                    <div class="col s8">
+                                        <a class="btn-flat dropdown-button waves-effect waves-light white-text" href="#" data-activates="profile-dropdown">MECACORP.<i class="mdi-navigation-arrow-drop-down right"></i></a>
+                                        <ul id="profile-dropdown" class="dropdown-content">
+                                            <li><a href="#"><i class="material-icons">person</i>Profile</a></li>
+                                            <li><a href="#"><i class="material-icons">settings</i>Setting</a></li>
+                                            <li><a href="#"><i class="material-icons">help</i>Help</a></li>
+                                            <li class="divider"></li>
+                                            <li><a href="#"><i class="material-icons">lock</i>Lock</a></li>
+                                            <li><a href="#"><i class="material-icons">exit_to_app</i>Logout</a></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </li>
+
+
+
+
+                            <li >
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">folder_special</i>Backoffice <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li><a class="waves-effect waves-blue" href="/admin"><i class="material-icons">account_balance</i>AdminPanel<span class="new badge right yellow grey lighten-1" data-badge-caption="updated"></span></a></li>
+                                                <li><div class="divider"></div></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="blue">
+                                <ul class="collapsible collapsible-accordion">
+                                    <li>
+                                        <a class="collapsible-header waves-effect waves-blue"><i class="material-icons">account_circle</i>Membre <i class="material-icons right" style="margin-right:0;">arrow_drop_down</i></a>
+                                        <div class="collapsible-body">
+                                            <ul>
+                                                <li><a class="waves-effect waves-blue" href="/profile"><i class="material-icons">wifi</i>Mon profil</a></li>
+                                                <li><a class="waves-effect waves-blue" href="/register"><i class="material-icons">wifi</i>S'enregistrer</a></li>
+                                                <li><a class="waves-effect waves-blue" href="/login"><i class="material-icons">wifi</i>Se connecter</a></li>
+                                                <li><div class="divider"></div></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+
+                            <li class="blue"><a href="/actors"><i class="material-icons">directions_car</i>Les Acteurs</a></li>
+                            <li class="blue"><a href="/entity_advert"><i class="material-icons">event_note</i>L'actu</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+    </nav>
+</div>
+
+
+
+<div id="tab1" class="col s12">
+
+    {% block body %}
+    {% endblock %}
+
+
+</div>
+
+
+
+
+<div id="tab2" class="col s12">
+
+
+<!-- MOBILE ONLY FLOATING ACTION BUTTON -->
+<div class="fixed-action-btn hide-on-large-only">
+    <a class="btn-floating btn-large teal">
+        <i class="large material-icons">menu</i>
+    </a>
+    <ul>
+        <li><a href="#modal1" class="btn-floating teal lighten-3 tooltipped" data-tooltip="Share" data-position="left"><i class="material-icons">share</i></a></li>
+        <li><a href="#modal1" class="btn-floating teal lighten-2 tooltipped" data-tooltip="Start chat" data-position="left"><i class="material-icons">chat</i></a></li>
+        <li><a href="#modal1" class="btn-floating teal lighten-1 tooltipped" data-tooltip="Save contact" data-position="left"><i class="material-icons">file_download</i></a></li>
+        <li><a href="#modal1" class="btn-floating teal tooltipped" data-tooltip="Call" data-position="left"><i class="material-icons">call</i></a></li>
+    </ul>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<footer class="page-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col m6 l6 s12">
+                <h5 class="white-text">Footer</h5>
+                <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
+            </div>
+            <div class="col m6 l4 offset-l2 s12">
+                <h5 class="white-text">Mecacorp.</h5>
+                <ul>
+                    {% if is_granted('IS_AUTHENTICATED_ROLE_SUPER_ADMIN') %}
+                    <li><a class="grey-text text-lighten-3" href="/admin">BackOffice</a></li>
+                    {% endif %}
+                    <li><a href="/Filial">La Filière</a></li>
+                    <li><a href="/entity_advert">L'actu</a></li>
+                    <li><a href="/actors">Les Acteurs</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="footer-copyright">
+        <div class="container">
+            © 2017 MECACORP.
+            <span class="right">
+      <a class="grey-text text-lighten-4" href="#!">Privacy Policy</a>
+      &nbsp;|&nbsp;
+      <a class="grey-text text-lighten-4" href="#!">Terms & Conditions</a>
+    </span>
+        </div>
+    </div>
+</footer>
+
+
+
+
+
+
+<!-- Visual Breakpoint Helper for Materialize - http://materializecss.com/ -->
+<div style="position:fixed;bottom:0;left:0;background-color:rgba(0,0,0,0.5);padding:10px;color:#fff;z-index: 99999999;">
+    <span class="hide-on-med-only hide-on-large-only">Small</span>
+    <span class="hide-on-small-only hide-on-large-only">Tablet</span>
+    <span class="hide-on-small-only hide-on-med-only">Desktop</span>
+</div>
+
+
+
+
+<!-- TRANSIFEX MOCKUP LANGUAGE CHOOSER -->
+
+    <!-- Preloader and it's background. -->
+    <div  class="preloader-background">
+
+        <div class="load">
+            <div class="gear one">
+                <svg style="color: #000000; ;" id="blue" viewbox="0 0 100 100" fill="#000000">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                </svg>
+            </div>
+            <div class="gear two">
+                <svg id="pink" viewbox="0 0 100 100" fill="#000000">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                </svg>
+            </div>
+            <div class="gear three">
+                <svg id="yellow" viewbox="0 0 100 100" fill="#000000">
+                    <path d="M97.6,55.7V44.3l-13.6-2.9c-0.8-3.3-2.1-6.4-3.9-9.3l7.6-11.7l-8-8L67.9,20c-2.9-1.7-6-3.1-9.3-3.9L55.7,2.4H44.3l-2.9,13.6      c-3.3,0.8-6.4,2.1-9.3,3.9l-11.7-7.6l-8,8L20,32.1c-1.7,2.9-3.1,6-3.9,9.3L2.4,44.3v11.4l13.6,2.9c0.8,3.3,2.1,6.4,3.9,9.3      l-7.6,11.7l8,8L32.1,80c2.9,1.7,6,3.1,9.3,3.9l2.9,13.6h11.4l2.9-13.6c3.3-0.8,6.4-2.1,9.3-3.9l11.7,7.6l8-8L80,67.9      c1.7-2.9,3.1-6,3.9-9.3L97.6,55.7z M50,65.6c-8.7,0-15.6-7-15.6-15.6s7-15.6,15.6-15.6s15.6,7,15.6,15.6S58.7,65.6,50,65.6z"></path>
+                </svg>
+            </div>
+            <div class="lil-circle"></div>
+            <svg class="blur-circle">
+                <filter id="blur">
+                    <fegaussianblur in="SourceGraphic" stddeviation="13"></fegaussianblur>
+                </filter>
+            </svg>
+        </div>
+
+
+<script>document.addEventListener("DOMContentLoaded", function(){
+        $('.preloader-background').delay(1000).fadeOut('slow');
+
+        $('.preloader-wrapper')
+            .delay(500)
+            .fadeOut();
+    });
+    // Initialize collapse button
+    $(".button-collapse").sideNav();
+    // Initialize collapsible (uncomment the line below if you use the dropdown variation)
+    //$('.collapsible').collapsible();
+    // AFFIX LOWER NAVBAR ON SCROLL
+    $(window).scroll(function() {
+        var scroll = $(window).scrollTop();
+        if (scroll >= 64) {
+            $(".navbar-lower").addClass("navbar-fixed");
+        }
+        else {
+            $(".navbar-lower").removeClass("navbar-fixed");
+        }
+    });
+
+
+    // FADE IN SMALL LOGO AND FAB ON SCROLL
+    $(window).scroll(function() {
+        var scrollPosition = $(this).scrollTop();
+        var $fadeInLogo = $('.fadeInLogo');
+        var $growInFab = $('.halfway-fab');
+        if (scrollPosition > 128) {
+            // Fade in logo & bring in FAB
+            $fadeInLogo.fadeIn(200);
+            $growInFab.removeClass("scale-out");
+        } else {
+            // Fade out logo & remove FAB
+            $fadeInLogo.fadeOut(200);
+            $growInFab.addClass("scale-out");
+        }
+    });
+
+
+    // MODAL
+    $(document).ready(function(){
+        $('.modal').modal();
+    });
+
+    // DROPDOWNS
+    $(document).ready(function(){
+        $(".dropdown-button").dropdown(
+            {
+                belowOrigin: true
+            }
+        );
+    });
+
+    //TABS
+    $(document).ready(function(){
+        $('ul.tabs').tabs();
+    });
+
+    //SCROLLSPY
+    $(document).ready(function(){
+        $('.scrollspy').scrollSpy();
+    });
+
+    // SIDEBAR
+    $(document).ready(function(){
+        $('.button-collapse').sideNav({
+                menuWidth: 300, // Default is 300
+                edge: 'right', // Choose the horizontal origin
+                closeOnClick: true, // Closes side-nav on <a> clicks, useful for Angular/Meteor
+                draggable: true // Choose whether you can drag to open on touch screens
+            }
+        );
+    });
+
+
+
+  // SCRIPT SEARCH GOOGLE
+
+    $(document).ready(function() {
+
+        /*Hide hackLink*/
+        $("#jq_search a").css({
+            "visibility":"hidden",
+            "display":"block",
+            "width":"0",
+            "height":"0",
+            "position":"absolute",/*observe this*/
+            "top":"-100px",
+            "left":"-100px"
+        });
+
+        $('#jq_search input[type=submit]').click(function()
+        {
+            a=encodeURI($("#jq_search input[type=search]").val());
+            $("#jq_search a").attr("href", "https://www.google.be/search?q="+a);
+            if($(this).val()=="Traduct")
+            {
+                $("#jq_search a").attr("href", "http://translate.google.fr/#fr/en/"+a);
+            }
+        });
+
+        $('#jq_search').submit(function(){
+
+            /*Click external page*/
+            var link = $("#jq_search a");
+            link.click();
+            window.location.href = link.attr("href");
+
+            return false;
+        });
+    }); </script>
+
+{% block javascripts %}
+
+{% endblock %}
+
+
+
+</div>
+</div>
+</body>
+</html>
+

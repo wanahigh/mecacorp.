@@ -1,0 +1,10 @@
+acme_actor_actors:
+    resource: "@AcmeActorBundle/Resources/config/routing/actors.php"
+    prefix:   /actors
+
+
+app_bundle_route:
+   path:     /ajax_request
+   defaults: { _controller: AcmeActorBundle:Actors:index }
+
+

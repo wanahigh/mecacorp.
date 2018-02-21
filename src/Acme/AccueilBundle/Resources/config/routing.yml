@@ -1,0 +1,4 @@
+acme_accueil_default_index :
+    path:     /
+    defaults: { _controller: AcmeAccueilBundle:Default:index }
+

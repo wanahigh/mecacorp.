@@ -1,0 +1,5 @@
+acme_contact_homepage:
+    path:     /contact
+    defaults: { _controller: AcmeContactBundle:Default:contact }
+    requirements:
+            _method:  GET

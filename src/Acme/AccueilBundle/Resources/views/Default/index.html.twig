@@ -1,0 +1,93 @@
+{% extends 'base.html.twig' %}
+{% block body %}
+
+    <style>
+
+        #scth1{
+            background-color:lightgrey!important;
+            height:25em;
+        }
+        #scth2{
+            height:60em;
+        }
+
+        #scth3{
+            height:60em;
+        }
+
+        .flow-text  {
+            margin-left: 10% !important;
+            margin-right:10% !important;
+
+        }
+        .header{
+            margin-bottom: 2em !important;
+        }
+    </style>
+
+
+    <div class="slider">
+        <ul class="slides">
+            <li>
+                <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
+                <div class="caption center-align">
+                  <h3 class="header card z-depth-5">100 entreprises dans la filière |
+                        3 axes de développement</h3>
+                </div>
+            </li>
+            <li>
+                <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
+                <div class="caption left-align">
+                    <h3 class="card blue z-depth-5">Mobilité Durable</h3>
+                    <h5 class="light grey-text text-lighten-3"></h5>
+                </div>
+            </li>
+            <li>
+                <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
+                <div class="caption right-align">
+                    <h3 class="card blue z-depth-5">Véhicule d'époque</h3>
+                    <h5 class="light grey-text text-lighten-3"></h5>
+                </div>
+            </li>
+            <li>
+                <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
+                <div class="caption center-align">
+                    <h3 class="card blue z-depth-5 ">Loisirs et Compétition!</h3>
+                    <h5 class="light grey-text text-lighten-3"></h5>
+                </div>
+            </li>
+        </ul>
+    </div>
+{#---------------------------------------------------------------------------------------------------------------------------#}
+
+
+    <section id="scth1" class="card z-depth-5">
+        <blockquote class="card z-depth-3"><h3 class="header ">La filière</h3></blockquote>
+        <h5 class="flow-text center "><strong>Avec près de 100 entreprises dans la filière dont une trentaine implantée au Pôle Mécanique (et plus de 600 en intégrant les concessionnaires,
+            garages et clubs), les activités liées aux «Sports Mécaniques et Mobilité Durable» génèrent quelques <em>1100 emplois</em>.</strong></h5>
+       <p class="flow-text">Cet écosystème d’entreprises, doté de compétences complémentaires à forte valeur ajoutée, est animé par l’Agence de développement Alès Myriapolis qui
+            a d’ailleurs initié, fin 2016, une démarche collective afin de fédérer ces acteurs et accroitre leur compétitivité.</p>
+
+    </section>
+
+
+    {#-------------------------------------------------------------------------------#}
+
+ <section id="scth2" class="card  z-depth-5">
+     <blockquote class="card z-depth-3"><h3 class="header ">Les acteurs</h3></blockquote>
+ </section>
+
+ {#------------------------------------------------------------------------------------------   #}
+    <section id="scth3" class="card  z-depth-5">
+        <blockquote class="card z-depth-3"><h3 class="header ">Les dernières Actus</h3></blockquote>
+        <div>
+
+        </div>
+    </section>
+
+
+    <script>
+        $(document).ready(function(){
+            $('.slider').slider();
+        });</script>
+{% endblock %}

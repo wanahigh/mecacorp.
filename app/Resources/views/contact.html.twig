@@ -1,0 +1,46 @@
+{% extends '::base.html.twig' %}
+{% block body %}
+
+<div style="width:500px;height:50px;margin-left:35%" class="green"><span style="padding-left:35%;color: white;" class="flow-text center">CONTACT</span></div>
+    <style>
+        body{
+            background-image:url('{{ asset('../../../images/wallpaper-2561368_960_720.jpg') }}');
+            background-size:cover;
+        }
+    </style>
+
+    <h1 class="header">NOUS CONTACTER</h1>
+<div class="row">
+<div class="col s12 l4">
+
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2863.997460533861!2d4.079041315720142!3d44.124674529832575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12b4424aaac6badb%3A0x2720480c7f334a37!2sAl%C3%A8s+Myriapolis!5e0!3m2!1sfr!2sfr!4v1519208228186" width="600" height="450" frameborder="0" style="border:0" allowfullscreen></iframe><div class="row">
+    </div>
+    <div class="row">
+        <div class="container center col l8">
+            <div class="comment-form">
+                <!-- Comment Avatar -->
+                <div class="comment-avatar">
+                    <img src="http://lorempixel.com/200/200/people">
+                </div>
+                {{ form_start(form) }}
+                {{ form_widget(form) }}
+                <input type="submit" value="Create" onsubmit="fct()" />
+                {{ form_end(form) }}
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script>function fct(){
+            Materialize.toast('Message envoyé', 3000)
+        }</script>
+
+
+
+
+    <script src={{ asset('https://code.jquery.com/jquery-3.2.1.js') }} integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+{% endblock %}
+
+

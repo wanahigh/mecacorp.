@@ -1,0 +1,5 @@
+acme_work_entity_work:
+    resource: "@AcmeWorkBundle/Resources/config/routing/entity_work.php"
+    prefix:   /entity_work
+
+

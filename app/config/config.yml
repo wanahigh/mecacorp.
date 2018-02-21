@@ -1,0 +1,160 @@
+imports:
+    - { resource: parameters.yml }
+    - { resource: security.yml }
+    - { resource: services.yml }
+    - { resource: "@AcmeContactBundle/Resources/config/services.yml" }
+    - { resource: "@AcmeFilialeBundle/Resources/config/services.yml" }
+    - { resource: "@AcmeActorBundle/Resources/config/services.yml" }
+    - { resource: "@AcmeAccueilBundle/Resources/config/services.yml" }
+
+
+assetic:
+    debug:  '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    twig:
+        functions:
+            jpegoptim: ~
+    assets:
+        jquery: %kernel.root_dir%/../vendor/components/jquery/jquery.min.js
+        material_icons:
+            inputs:
+                 - https://fonts.googleapis.com/icon?family=Material+Icons
+    bundles: [ MaterializeBundle ]
+
+
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    locale: fr
+    images_directory: '%kernel.root_dir%/../web/uploads/images'
+    mailer_user:     fabienruault@gmail.com
+    mailer_password: vbmqvpcuxtzeadng
+
+
+
+framework:
+       translator: ~
+#    http_method_override: true
+       #esi: ~
+       translator: { fallbacks: ['%locale%'] }
+       secret: '%secret%'
+       router:
+           resource: '%kernel.project_dir%/app/config/routing.yml'
+           strict_requirements: ~
+       form: ~
+       csrf_protection: ~
+       validation: { enable_annotations: true }
+       serializer: { enable_annotations: true }
+       templating:
+           engines: ['twig']
+       default_locale: '%locale%'
+       trusted_hosts: ~
+       session:
+           # https://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+           handler_id: session.handler.native_file
+           save_path: '%kernel.project_dir%/var/sessions/%kernel.environment%'
+       fragments: ~
+       http_method_override: true
+       assets: ~
+       php_errors:
+           log: true
+
+# Twig Configuration
+twig:
+
+#    exception_controller: AppBundle:Exception:showException
+    debug: '%kernel.debug%'
+    strict_variables: '%kernel.debug%'
+    form_themes:
+                - '@Curiosity26AngularMaterialBundle/Resources/Form/material_1_layout.html.twig'
+doctrine:
+    dbal:
+        driver: pdo_sqlite
+        dbname: '%database_name%'
+        user: '%database_user%'
+        password: '%database_password%'
+        charset: UTF8
+        path: '%database_path%'
+    orm:
+    orm:
+        auto_generate_proxy_classes: '%kernel.debug%'
+        naming_strategy: doctrine.orm.naming_strategy.underscore
+        auto_mapping: true
+
+# Swiftmailer Configuration
+swiftmailer:
+    transport: '%mailer_transport%'
+    host: '%mailer_host%'
+    username: '%mailer_user%'
+    password: '%mailer_password%'
+    spool: { type: memory }
+
+fos_user:
+    db_driver: orm # other valid values are 'mongodb', 'couchdb' and 'propel'
+    firewall_name: main
+    user_class: AppBundle\Entity\User
+    from_email:
+        address: "test@test.com"
+        sender_name: "ja"
+assetic:
+    debug:          '%kernel.debug%'
+    use_controller: '%kernel.debug%'
+    filters:
+        cssrewrite: ~
+    bundles: [ "FOSCommentBundle" ]
+
+knp_paginator:
+    page_range: 5                       # number of links showed in the pagination menu (e.g: you have 10 pages, a page_range of 3, on the 5th page you'll see links to page 4, 5, 6)
+    default_options:
+        page_name: page                 # page query parameter name
+        sort_field_name: sort           # sort field query parameter name
+        sort_direction_name: direction  # sort direction query parameter name
+        distinct: true                  # ensure distinct results, useful when ORM queries are using GROUP BY statements
+        filter_field_name: filterField  # filter field query parameter name
+        filter_value_name: filterValue  # filter value query paameter name
+    template:
+        pagination: '@KnpPaginator/Pagination/sliding.html.twig'     # sliding pagination controls template
+        sortable: '@KnpPaginator/Pagination/sortable_link.html.twig' # sort link template
+        filtration: '@KnpPaginator/Pagination/filtration.html.twig'  # filters template
+
+#MaterializeBundle
+materialize:
+        local_cdn: 'https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js'
+
+easy_admin:
+    site_name: '  <em style="font-size: 80%;">MecaCorps Backoffice</em>'
+    design:
+            brand_color: 'dodgerblue'
+            color_scheme: 'dark'
+            menu: [ { entity: 'Advert', label: 'Actualité' }, { entity: 'Actors', label: 'Le Cluster' }, { entity: 'User', label: 'Membre du Site' }, { entity: 'Contact', label: 'Messagerie' }]
+    entities:
+        - Acme\ActuBundle\Entity\Entity\Advert
+        - Acme\ActorBundle\Entity\Actors
+        - AppBundle\Entity\User
+        - Acme\ContactBundle\Entity\Contact
+
+
+
+    list:
+           actions:
+                       - { name: 'show', icon: 'search', label: 'voir', title: 'Search' }
+                       - { name: 'edit', icon: 'pencil', label: 'editer', title: 'Edit' }
+                       - { name: 'delete', icon: 'pencil', label: 'supprimer', title: 'Edit' }
+                       - { name: 'new', icon: 'pencil', label: '', title: 'Edit' }
+                       - { name: 'search', icon: 'search', label: '', title: 'rechercher' }
+
+
+
+#
+#----------------------#SEO----------------------------------------
+sonata_seo:
+    page:
+        title: Mecacorp. La filière Sport Mecanique Alès et ses Partenaire
+        metas:
+            name:
+                description: Mecacorp. recense les principaux Acteurs du Pole Mécanique d'Alès et ses environs.
+                keywords: Mecacorp, Alès, Pole Mécanique, Sport Mécanique, Auto, Moto, Grand Alès, Circuits, Gard, Occitanie
+
+
+

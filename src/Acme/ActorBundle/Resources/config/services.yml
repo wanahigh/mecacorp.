@@ -1,0 +1,6 @@
+services:
+    acme.form.type.actors_search:
+        class: Acme\ActorBundle\Form\ActorsType
+        tags:
+            - { name: form.type, alias: actors_search_type }
+

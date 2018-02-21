@@ -1,0 +1,7 @@
+acme_actu_entity_advert:
+    resource: "@AcmeActuBundle/Resources/config/routing/entity_advert.php"
+    prefix:   /entity_advert
+
+acme_actu_homepage:
+    path:     /Actu
+    defaults: { _controller: AcmeActuBundle:Default:index }

@@ -1,0 +1,116 @@
+
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <div style="width:500px;height:50px;margin-left:35%" class="green"><span style="padding-left:35%;color: white;" class="flow-text center">LES ACTEURS</span></div>
+
+
+
+
+    <div class="container">
+        <blockquote><h4 class="header">Les acteurs de la filière "Sport mécaniques & Mobilité Durable"     </h4></blockquote>
+        <hr>
+        <p class="flowtext">cet annuaire regroupe les coordonnées de tous les acteurs (entreprises, clubs, écoles, organisme de formation...) qui oeuvrent dans une ou plusieurs catégories de la filière "Sport Mécanique et Mobilité Durable" sur le territoire Alès Cévènnes.
+            Vous recherchez un prestataire, un service, une formation dans ces métier? <strong>C'est ici</strong></p>
+        <div id="match"></div>
+
+        <nav>
+            <div class="nav-wrapper white">
+                <form>
+                    <div>
+                        <input class=" autocomplete blue z-depth-10 hoverable" type="search" id="myTextField" >
+                        <label  class="label-icon" for="search" ><i class="material-icons">search</i></label>
+
+                        <i class="material-icons">close</i>
+                    </div>
+                </form>
+            </div>
+        </nav>
+
+
+<div  class="container">
+<div style="border: 1px solid black;" class="container">
+        <div  class="carousel carousel-slider">
+            {% for actor in pagination %}
+
+            <div id="caroussel" class="carousel-item" href="#one!">
+                <div class="carousel-fixed-item center">
+                </div>
+                <div id="cardPanel" class="card z-depth-10 ">
+                    <div class="card-image waves-effect waves-block waves-light">
+                        <img class="activator" src="{{ asset('uploads/images/' ~  actor.image ) }}" width="500px" height="500px">
+
+                    </div>
+                    <div class="card-content">
+                        <span class="card-title activator grey-text text-darken-4"><a class="btn-large blue" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">{{ actor.raisonsocial }}</a><i class="material-icons right">more_vert</i></span>
+                        <p><a href="#">{{ actor.siteweb }}</a></p>
+                    </div>
+                    <div class="card-reveal">
+                        <span class="card-title grey-text text-darken-4"><i class="material-icons">accessibility</i>{{ actor.nomdudirigeant }}<i class="material-icons right">close</i></span>
+                        <ul>
+                            <li>
+                                <a class="btn-large green right" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">Voir +</a>
+                            </li>
+                            <li> <i class="material-icons">place</i>{{ actor.adresse }} </li>
+                            <li><i class="material-icons">phone</i> {{ actor.tel }} </li>
+                            <li><i class="material-icons">mail</i> {{ actor.mail }} </li>
+                            <li><i class="material-icons">arrow</i> <blockquote> <strong>{{ actor.secteur}} </strong> {{ actor.description }}</blockquote> </li>
+
+                            <li> <i class="material-icons">device_hub</i> {{ actor.facebook }} </li>
+                            <li><i class="material-icons">linkedin</i> {{ actor.linkedin }} </li>
+                            <li><a href=""><i class="material-icons">twitter</i> {{actor.twitter }}</a> </li>
+                            <li><i class="material-icons">instragram</i> {{ actor.instagram }} </li>
+                            <li>  {{ actor.competences }} </li>
+                        </ul>
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+                {% endfor %}
+        </div>
+</div>
+</div>
+    <script>
+        $('.carousel.carousel-slider').carousel({fullWidth: true});
+    </script>
+    <script>
+
+
+        var loader = "{{ asset('../../../images/ounq1mw5kdxy.gif') }}"; //link to the animated loader-small.gif
+        var ROOT_URL = "{{ url('homepage')}}"; //your root URL, used in autocomplete-countries.js file
+    </script>
+    <script>$(document).ready(function(){
+            $("#myTextField").on('keyup', function() { // everytime keyup event
+                var input = $(this).val(); // We take the input value
+                if ( input.length >= 1 ) { // Minimum characters = 2 (you can change)
+                    $('#match').html('<img src="' + window.loader + '" />'); // Loader icon apprears in the <div id="match"></div>
+                    var data = {input: input}; // We pass input argument in Ajax
+                    $.ajax({
+                        type: "POST",
+                        url: ROOT_URL + "ajax/autocomplete/update/data", // call the php file ajax/tuto-autocomplete.php (check the routine we defined)
+                        data: data, // Send dataFields var
+                        dataType: 'json', // json method
+                        timeout: 3000,
+                        success: function(response){ // If success
+                            $('#match').html(response.ActorList); // Return data (UL list) and insert it in the <div id="match"></div>
+                            $('#matchList li').on('click', function() { // When click on an element in the list
+                                $('#myTextField').val($(this).text()); // Update the field with the new element
+                                $('#match').text(''); // Clear the <div id="match"></div>
+                            });
+                        },
+                        error: function() { // if error
+                            $('#match').text('Problem!');
+                        }
+                    });
+                } else {
+                    $('#match').text(''); // If less than 2 characters, clear the <div id="match"></div>
+                }
+            });
+        });
+
+      </script>
+
+{% endblock %}
+

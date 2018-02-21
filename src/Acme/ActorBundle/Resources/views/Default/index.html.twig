@@ -1,0 +1,138 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+<div class="row">
+    <div class="container center col l8">
+        {{ form_widget(form) }}
+
+        <div>
+            <input  class="autocomplete" type="text" name="request" required id="form.subject" placeholder="Votre recherche">
+            <label for="text" data-error="wrong" data-success="right"> Sujet</label>
+
+        </div>
+        <input class="btn-large pink" type="submit" value="Submit">
+            {{ form_end(form) }}
+        </div>
+    </div>
+</div>
+{% for results in results %}
+    <div class="hover col l8" >
+        <h1 class="header">{{ results.raisonsocial  }}</h1>
+        <img  class="activator" src="{{ asset('uploads/images/' ~  results.image ) }}" height="300px" width="600px">
+        <table>
+            <tbody>
+            <tr>
+                <th>Categorie</th>
+                <td>{{ results.categorie }}</td>
+            </tr>
+            <tr>
+                <th>Nomdudirigeant</th>
+                <td>{{ results.nomdudirigeant }}</td>
+            </tr>
+            <tr>
+                <th>Adresse</th>
+                <td>{{ results.adresse }}</td>
+            </tr>
+            <tr>
+                <th>Tel</th>
+                <td>{{ results.tel }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ results.mail }}</td>
+            </tr>
+            <tr>
+                <th>Siteweb</th>
+                <td>{{ results.siteweb }}</td>
+            </tr>
+            <tr>
+                <th>Facebook</th>
+                <td>{{ results.facebook }}</td>
+            </tr>
+            <tr>
+                <th>Linkedin</th>
+                <td>{{ results.linkedin }}</td>
+            </tr>
+            <tr>
+                <th>Twitter</th>
+                <td>{{ results.twitter }}</td>
+            </tr>
+            <tr>
+                <th>Instagram</th>
+                <td>{{ results.instagram }}</td>
+            </tr>
+            <tr>
+                <th>Secteur</th>
+                <td>{{ results.secteur }}</td>
+            </tr>
+            <tr>
+                <th>Description</th>
+                <td>{{ results.description }}</td>
+            </tr>
+            <tr>
+                <th>Competences</th>
+                <td>{{ results.competences }}</td>
+            </tr>
+            <tr>
+                <th>Raisonsocial</th>
+                <td>{{ results.raisonsocial }}</td>
+            </tr>z
+            </tbody>
+        </table>
+
+        <nav>
+            <div class="nav-wrapper white z-depht-10"><a class="brand-logo" href="/"><i class="material-icons">search</i></a><a class="right button-collapse" href="#" data-activates="nav-mobile"><i class="mdi-navigation-more-vert"></i></a>
+
+
+                <ul class="right hide-on-med-and-down" id="nav-mobile">
+
+                    <a class='dropdown-button btn blue' href='#' data-activates='dropdown1'>Catégorie</a>
+
+                    <ul id='dropdown1' class='dropdown-content'>
+                        {% for results in results %}
+
+                            <a class="blue" href="{{ path('actors_show', { 'raisonsocial': results.raisonsocial }) }}">{{ results.raisonsocial }}</a>
+                        {% endfor %}
+
+
+                    </ul>
+
+                </ul>
+
+    </div>
+{% endfor %}
+
+    <script type="text/javascript">
+        $(function() {
+            $.ajax({
+                url: "http://localhost:9200/rechercher",
+                type:'POST',
+                data: JSON.stringify({ browser: navigator.userAgent,
+                    date: new Date() }),
+                contentType: 'text/plain'
+            });
+        });
+
+        $(document).ready(function () {
+
+            $('input.autocomplete').autocomplete({
+                    data: {
+                        {% for results in results %}
+
+                        "{{results.categorie}}":null,
+
+
+                        {% endfor%}
+
+                    },
+                    limit: 20, // The max amount of resultss that can be shown at once. Default: Infinity.
+                    onAutocomplete: function(val) {
+
+                    },
+                    minLength: 1, // The minimum length of the input for the autocomplete to start. Default: 1.
+                }
+            )
+        });
+
+    </script>
+{% endblock  %}

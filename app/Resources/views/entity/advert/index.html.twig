@@ -1,0 +1,49 @@
+{% extends "::base.html.twig" %}
+
+{% block body %}
+
+    <div style="width:500px;height:50px;margin-left:35%" class="green"><span style="padding-left:35%;color: white;" class="flow-text center">L'ACTUALITÉ</span></div>
+{% for advert in adverts %}
+<div class="chip"><a href="" style="color:white!important;display:flex!important;" >{{ advert.category }}</a></div>
+{% endfor  %}
+    </div>
+
+    <div class="container">
+        {% for advert in adverts %}
+
+<table>
+
+        <article class="card z-depth-5 hoverable">
+
+            <h2 class="header"> {{ advert.title }}</h2>
+            <p>    <a class="card red" href="{{ path('entity_advert_show',{ 'id': advert.id }) }}">
+                    <img class="responsive" src="{{ asset('uploads/images/' ~ advert.image) }}" height="300px" width="600px" ></a>
+
+
+                <blockquote>  <i class="material-icons">book</i><strong style="color:dodgerblue;">  {{ advert.author }}
+                    <i class="material-icons">swatch</i>{% if advert.date %}{{ advert.date|date('Y-m-d H') }}{% endif %}   </strong></blockquote>
+
+                <a class="btn-large green right" href="{{ path('entity_advert_show',{ 'id': advert.id }) }}">Lire l'article</a>
+
+            <strong><hr></strong>
+
+            </p>
+
+
+
+        </article>
+
+
+
+
+</table> {% endfor %}</div>  <div class="text-center">{{ knp_pagination_render(adverts) }}</div>
+
+
+    <script>$('a').click(function(){
+            $('html, body').animate({
+                scrollTop: $($(this).attr('href')).offset().top - 30
+            }, 500);
+            return false;
+        });</script>
+
+{% endblock %}
