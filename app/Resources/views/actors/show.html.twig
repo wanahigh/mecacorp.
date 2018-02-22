@@ -3,14 +3,12 @@
 {% block body %}
 
 
-<div style="width:500px;height:50px;margin-left:35%" class="green"><span style="padding-left:35%;color: white;" class="flow-text center">{{ actor.raisonsocial }}</span></div>
+<div style="width:500px;height:auto;margin-left:35%" class="green"><div style="padding-left:35%;color:white;" class="justify">{{ actor.raisonsocial }}</div></div>
 
 <section style="margin-left:12.5%;"class="row">
     <div class="col s 12 l 6">
-
     <img  class="card-panel hoverable" src="{{ asset('uploads/images/' ~  actor.image ) }}"  height="300px" width="300px">
-
-   <blockquote> <h1><a href="">{{ actor.siteweb }}</a></h1></blockquote>
+   <blockquote><h1><a href="">{{ actor.siteweb }}</a></h1></blockquote>
     </div>
 <div  class="col s 12 l 6">
     <div  class="card container ">
@@ -31,27 +29,9 @@
     </div>
 
 
-
-
     <a class="btn  green container" href="{{ path('actors_index') }}">RETOUR</a>
-
-
-
-
-
-
-
-
-
-
-
         <ul>
-
         </ul>
-
-
-
-
     </div>
     <style>
 
@@ -59,11 +39,9 @@
         {
             background-attachment: fixed;
             background-image: url('{{ asset('../../../images/loisirs-competition.jpg') }}');
-            border:1px solid red;
             width: auto;
         }
     </style>
 
-    <script></script>
 </section>
         {% endblock %}

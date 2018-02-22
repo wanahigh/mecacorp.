@@ -113,7 +113,6 @@
                     {# table body #}
                     {% for actor in pagination %}
                         <div id="Act1" class="row" >
-
                             <div class="container">
                                 <div class="card medium z-depth-5 hover">
                                     <div class="card-image waves-effect waves-block waves-light">
@@ -121,7 +120,7 @@
                                     </div>
                                     <div class="card-content">
                                         <span class="card-title activator grey-text text-darken-4"><a class="btn-large blue" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">{{ actor.raisonsocial }}</a><i class="material-icons right">more_vert</i></span>
-                                        <p><a href="#">{{ actor.siteweb }}</a></p>
+                                        <p><a href="">{{ actor.siteweb }}</a></p>
                                     </div>
                                     <div class="card-reveal">
                                         <span class="card-title grey-text text-darken-4"><i class="material-icons">accessibility</i>{{ actor.nomdudirigeant }}<i class="material-icons right">close</i></span>
@@ -233,7 +232,6 @@
         </svg>
     </div>
 </div>
-
 
 
 </div>

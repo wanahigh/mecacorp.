@@ -122,17 +122,6 @@
       <path value="$PROJECT_DIR$/vendor/symfony/security-acl" />
       <path value="$PROJECT_DIR$/vendor/friendsofsymfony/jsrouting-bundle" />
       <path value="$PROJECT_DIR$/vendor/zendframework/zenddiagnostics" />
-      <path value="$PROJECT_DIR$/vendor/white-october/pagerfanta-bundle" />
-      <path value="$PROJECT_DIR$/vendor/elasticsearch/elasticsearch" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/ringphp" />
-      <path value="$PROJECT_DIR$/vendor/guzzlehttp/streams" />
-      <path value="$PROJECT_DIR$/vendor/algolia/algoliasearch-client-php" />
-      <path value="$PROJECT_DIR$/vendor/algolia/search-bundle" />
-      <path value="$PROJECT_DIR$/vendor/ruflin/elastica" />
-      <path value="$PROJECT_DIR$/vendor/react/promise" />
-      <path value="$PROJECT_DIR$/vendor/liip/search-bundle" />
-      <path value="$PROJECT_DIR$/vendor/sg/datatablesbundle" />
-      <path value="$PROJECT_DIR$/vendor/friendsofsymfony/elastica-bundle" />
       <path value="$PROJECT_DIR$/vendor/chebur/search-bundle" />
       <path value="$PROJECT_DIR$/vendor/search/sphinxsearch-bundle" />
       <path value="$PROJECT_DIR$/vendor/psr/http-message" />

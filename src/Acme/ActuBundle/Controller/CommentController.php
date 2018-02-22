@@ -33,7 +33,7 @@ class CommentController extends Controller
             3/*nbre d'éléments par page*/
         );
         return $this->render('', array(
-            'Adverts' => $Comment,));
+            'Comment' => $Comment,));
     }
 
     /**
