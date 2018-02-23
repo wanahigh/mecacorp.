@@ -66,8 +66,7 @@ twig:
 #    exception_controller: AppBundle:Exception:showException
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
-    form_themes:
-                - '@Curiosity26AngularMaterialBundle/Resources/Form/material_1_layout.html.twig'
+
 doctrine:
     dbal:
         driver: pdo_sqlite

@@ -2,6 +2,10 @@
 {% block body %}
 
     <style>
+
+        {
+           margin-left:25%;
+        }
         img{
             background-attachment: fixed;
         contrast(200%);
@@ -33,13 +37,13 @@
         #scth2{
             background-attachment: fixed;
             height:auto;
-            background-image: url('{{ asset('../../../images/asset/patternCarbon.jpeg') }}');
+
         }
 
         #scth3{
             background-attachment: fixed;
             height:auto;
-            background-image: url('{{ asset('../../../images/asset/2c19454b8af52a34b70a358652086b5d.jpg') }}');
+
         }
 
         .flow-text  {
@@ -54,101 +58,77 @@
             max-width: 500px;
             min-width: 500px;
         }
+
     </style>
 
 
 
+<div class="responsive" style="background-attachment:fixed;height:500px;background-size:cover;background-image: url('{{ asset('../../../images/logo-filiere-spmeca-01.jpg') }}')" id="container">
+        <div  >
+            <ul >
+                <li><!-- random image -->
+                    <div>
+                       <strong class="center "> <h4 class="blue-text" >100 ENTREPRISES DANS LA FILIERE |
+                            3 AXES DE DEVELOPPEMENT</h4></br>
+                        <h4 class="black-text">MOBILITE DURABLE | VEHICULE D'EPOQUE | LOISIR ET COMPETITION</h4></strong>
+                    </div>
+                </li>
 
-        <div class="slider">
-            <ul class="slides">
-                <li>
-                    <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3 class="header card z-depth-5">100 entreprises dans la filière |
-                            3 axes de développement</h3>
-                    </div>
-                </li>
-                <li>
-                    <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
-                    <div class="caption left-align">
-                        <h3 class="card blue z-depth-5">Mobilité Durable</h3>
-                        <h5 class="light grey-text text-lighten-3"></h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
-                    <div class="caption right-align">
-                        <h3 class="card blue z-depth-5">Véhicule d'époque</h3>
-                        <h5 class="light grey-text text-lighten-3"></h5>
-                    </div>
-                </li>
-                <li>
-                    <img src="{{ asset('../../../images/illus-accueil.jpg') }}"> <!-- random image -->
-                    <div class="caption center-align">
-                        <h3 class="card blue z-depth-5 ">Loisirs et Compétition</h3>
-                        <h5 class="light grey-text text-lighten-3"></h5>
-                    </div>
-                </li>
             </ul>
         </div>
+</div>
         {#---------------------------------------------------------------------------------------------------------------------------#}
 
 
-        <section id="scth1" class="card z-depth-5">
-            <blockquote class="card z-depth-3"><h3 class="header ">LA FILIERE</h3></blockquote>
-            <h5 class="flow-text center "><strong>Avec près de 100 entreprises dans la filière dont une trentaine implantée au Pôle Mécanique (et plus de 600 en intégrant les concessionnaires,
+        <section class="grey" >
+           <h3 class="header ">LA FILIERE</h3>
+            <h5  class="flow-text  "><strong>Avec près de 100 entreprises dans la filière dont une trentaine implantée au Pôle Mécanique (et plus de 600 en intégrant les concessionnaires,
                     garages et clubs), les activités liées aux «Sports Mécaniques et Mobilité Durable» génèrent quelques <em>1100 emplois</em>.</strong></h5>
-            <p class="flow-text">Cet écosystème d’entreprises, doté de compétences complémentaires à forte valeur ajoutée, est animé par l’Agence de développement Alès Myriapolis qui
-                a d’ailleurs initié, fin 2016, une démarche collective afin de fédérer ces acteurs et accroitre leur compétitivité.</p>
+            <h5 class="flow-text">Cet écosystème d’entreprises, doté de compétences complémentaires à forte valeur ajoutée, est animé par l’Agence de développement Alès Myriapolis qui
+                a d’ailleurs initié, fin 2016, une démarche collective afin de fédérer ces acteurs et accroitre leur compétitivité.</h5>
 
         </section>
 
 
         {#-------------------------------------------------------------------------------#}
 
-        <section id="scth2" class="card  z-depth-5">
-            <blockquote class="card z-depth-3"><h3 class="header ">LES ACTEURS</h3></blockquote>
-            <div class="auto">    <table >
+        <section>
+            <div class="card z-depth-3"><h3 class="header ">LES ACTEURS</h3>
+
 
                     {# table body #}
                     {% for actor in pagination %}
-                        <div id="Act1" class="row" >
-                            <div class="container">
-                                <div class="card medium z-depth-5 hover">
-                                    <div class="card-image waves-effect waves-block waves-light">
-                                        <img id="blur" class="activator" src="{{ asset('uploads/images/' ~  actor.image ) }}" height="300px" width="600px">
-                                    </div>
-                                    <div class="card-content">
-                                        <span class="card-title activator grey-text text-darken-4"><a class="btn-large blue" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">{{ actor.raisonsocial }}</a><i class="material-icons right">more_vert</i></span>
-                                        <p><a href="">{{ actor.siteweb }}</a></p>
-                                    </div>
-                                    <div class="card-reveal">
-                                        <span class="card-title grey-text text-darken-4"><i class="material-icons">accessibility</i>{{ actor.nomdudirigeant }}<i class="material-icons right">close</i></span>
-                                        <ul>
-                                            <li> <i class="material-icons">place</i>{{ actor.adresse }} </li>
-                                            <li><i class="material-icons">phone</i> {{ actor.tel }} </li>
-                                            <li><i class="material-icons">mail</i> {{ actor.mail }} </li>
-                                            <li><i class="material-icons">arrow</i> <blockquote> <strong>{{ actor.secteur}} </strong> {{ actor.description }}</blockquote> </li>
+                            <div class="row col l4 s3 m3" id="Act1" style="margin:auto">
 
-                                            <li> <i class="material-icons">device_hub</i> {{ actor.facebook }} </li>
-                                            <li><i class="material-icons">linkedin</i> {{ actor.linkedin }} </li>
-                                            <li><a href=""><i class="material-icons">twitter</i> {{actor.twitter }}</a> </li>
-                                            <li><i class="material-icons">instragram</i> {{ actor.instagram }} </li>
-                                            <li></li>
-                                            <li>  {{ actor.competences }} </li>
-                                        </ul>
-                                        <ul>
-                                            <li>
-                                                <a class="btn-large green" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">Voir +</a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
+                                        <a href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}"><img height="200px" width="200px"   src="{{ asset('uploads/images/' ~  actor.image ) }}"></a>
+
+
                             </div>
-                        </div>
+
+                                    {#<div class="card-reveal">#}
+                                        {#<span class="card-title grey-text text-darken-4"><i class="material-icons">accessibility</i>{{ actor.nomdudirigeant }}<i class="material-icons right">close</i></span>#}
+                                        {#<ul>#}
+                                            {#<li> <i class="material-icons">place</i>{{ actor.adresse }} </li>#}
+                                            {#<li><i class="material-icons">phone</i> {{ actor.tel }} </li>#}
+                                            {#<li><i class="material-icons">mail</i> {{ actor.mail }} </li>#}
+                                            {#<li><i class="material-icons">arrow</i> <blockquote> <strong>{{ actor.secteur}} </strong> {{ actor.description }}</blockquote> </li>#}
+
+                                            {#<li> <i class="material-icons">device_hub</i> {{ actor.facebook }} </li>#}
+                                            {#<li><i class="material-icons">linkedin</i> {{ actor.linkedin }} </li>#}
+                                            {#<li><a href=""><i class="material-icons">twitter</i> {{actor.twitter }}</a> </li>#}
+                                            {#<li><i class="material-icons">instragram</i> {{ actor.instagram }} </li>#}
+                                            {#<li></li>#}
+                                            {#<li>  {{ actor.competences }} </li>#}
+                                        {#</ul>#}
+                                        {#<ul>#}
+                                            {#<li>#}
+                                                {#<a class="btn-large green" href="{{ path('actors_show', { 'raisonsocial': actor.raisonsocial }) }}">Voir +</a>#}
+                                            {#</li>#}
+                                        {#</ul>#}
+
                     {% endfor %}
-                </table>
             </div>
+
 
 
             <div class="row">
@@ -178,14 +158,13 @@
                 </svg>
             </div>
 
+
         </section>
 
 
 
-
-
     <section  id="scth3" class="card   z-depth-5">
-    <blockquote class="card z-depth-3"><h3 class="header ">L'ACTUALITÉ</h3></blockquote>
+    <h3 class="header ">L'ACTUALITÉ</h3>
 <div  style="display:flex!important;">
 
     {% for advert in adverts %}
@@ -232,9 +211,8 @@
         </svg>
     </div>
 </div>
+    </section>
 
-
-</div>
 
     <style>*, *:before, *:after {
             -webkit-box-sizing: border-box;

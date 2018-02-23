@@ -1,5 +1,0 @@
-<form class="{{ css_class }}" action="{{ search_url }}">
-    <label for="{{ field_id|default('query') }}" class="search-label">{% trans from 'LiipSearchBundle' %}search_site{% endtrans %}</label>
-    <input type="text" class="search-input" id="{{ field_id|default('query') }}" name="{{ query_param_name }}" value="{{ query|default('') }}" />
-    <input type="submit" class="button search-button" value="{% trans from 'LiipSearchBundle' %}send{% endtrans %}" />
-</form>

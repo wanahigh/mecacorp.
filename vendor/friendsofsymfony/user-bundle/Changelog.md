@@ -1,7 +1,21 @@
 Changelog
 =========
 
+### 2.1.1 (2018-02-20)
+
+* Fixed the check for the required session, to account for the fact it is not always required.
+
+### 2.1.0 (2018-02-16)
+
+* Dropped Symfony < 2.8 support.
+* Add Symfony 4 compatibility.
+* Refactored controllers and commands to use DI. Projects extending these classes will need to adapt their code (but should rather use supported extension points when possible).
+* Redirect to login when requesting resetting password with invalid token.
+* Added autocomplete hints for password inputs.
+* Fixed several incorrect Turkish translations.
+
 ### 2.0.2 (2017-11-29)
+
 * Fix empty password in ChangePasswordFormType.
 * Fix empty password in ProfileFormType.
 * Introduced aliases for autowiring user and group managers.

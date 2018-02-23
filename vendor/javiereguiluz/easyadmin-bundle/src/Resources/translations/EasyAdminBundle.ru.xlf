@@ -81,7 +81,7 @@
             </trans-unit>
             <trans-unit id="label.object">
                 <source>label.object</source>
-                <target>PHP Объект</target>
+                <target>PHP-объект</target>
             </trans-unit>
             <trans-unit id="label.inaccessible">
                 <source>label.inaccessible</source>
@@ -89,7 +89,7 @@
             </trans-unit>
             <trans-unit id="label.inaccessible.explanation">
                 <source>label.inaccessible.explanation</source>
-                <target>Нет геттера для этого поля или свойство не публично</target>
+                <target>Нет геттера для этого поля или свойство не общедоступно</target>
             </trans-unit>
 
             <!-- user -->
@@ -121,7 +121,7 @@
             </trans-unit>
             <trans-unit id="delete_modal.content">
                 <source>delete_modal.content</source>
-                <target>Эту операцию нельзя будет отменить.</target>
+                <target>Эту операцию нельзя отменить.</target>
             </trans-unit>
             <trans-unit id="delete_modal.action">
                 <source>delete_modal.action</source>
@@ -150,6 +150,28 @@
             <trans-unit id="show.remaining_items">
                 <source>show.remaining_items</source>
                 <target><![CDATA[{1} %count% элемент не отображается в этом списке|{2,3,4} %count% элемента не отображаются в этом списке|]5,Inf] %count% элементов не отображаются в этом списке]]></target>
+            </trans-unit>
+
+            <!-- Exceptions -->
+            <trans-unit id="exception.entity_not_found">
+                <source>exception.entity_not_found</source>
+                <target>Элемент больше не доступен.</target>
+            </trans-unit>
+            <trans-unit id="exception.entity_remove">
+                <source>exception.entity_remove</source>
+                <target>Элемент не может быть удалён, потому что другой элемент зависит от него.</target>
+            </trans-unit>
+            <trans-unit id="exception.forbidden_action">
+                <source>exception.forbidden_action</source>
+                <target>Запрашиваемое действие запрещено для этого элемента.</target>
+            </trans-unit>
+            <trans-unit id="exception.no_entities_configured">
+                <source>exception.no_entities_configured</source>
+                <target>Приложение неправильно настроено.</target>
+            </trans-unit>
+            <trans-unit id="exception.undefined_entity">
+                <source>exception.undefined_entity</source>
+                <target>Приложение неправильно настроено для этого элемента.</target>
             </trans-unit>
         </body>
     </file>

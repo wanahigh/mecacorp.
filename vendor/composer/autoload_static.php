@@ -9,10 +9,11 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
     public static $files = array (
         '92c8763cd6170fce6fcfe7e26b4e8c10' => __DIR__ . '/..' . '/symfony/phpunit-bridge/bootstrap.php',
         '0e6d7bf4a5811bfa5cf40c5ccd6fae6a' => __DIR__ . '/..' . '/symfony/polyfill-mbstring/bootstrap.php',
-        'ad155f8f1cf0d418fe49e248db8c661b' => __DIR__ . '/..' . '/react/promise/src/functions_include.php',
+        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
+        '0ccdf99b8f62f02c52cba55802e0c2e7' => __DIR__ . '/..' . '/zircote/swagger-php/src/functions.php',
+        'd11dcc0191a380951885e568af488540' => __DIR__ . '/..' . '/sonata-project/block-bundle/src/Resources/stubs/symfony2.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
         '5255c38a0faeba867671b61dfda6d864' => __DIR__ . '/..' . '/paragonie/random_compat/lib/random.php',
-        '6a47392539ca2329373e0d33e1dba053' => __DIR__ . '/..' . '/symfony/polyfill-intl-icu/bootstrap.php',
         '32dcc8afd4335739640db7d200c1971d' => __DIR__ . '/..' . '/symfony/polyfill-apcu/bootstrap.php',
         'bd9634f2d41831496de0d3dfe4c94881' => __DIR__ . '/..' . '/symfony/polyfill-php56/bootstrap.php',
         '023d27dca8066ef29e6739335ea73bad' => __DIR__ . '/..' . '/symfony/polyfill-php70/bootstrap.php',
@@ -21,6 +22,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
     );
 
     public static $prefixLengthsPsr4 = array (
+        'p' => 
+        array (
+            'phpDocumentor\\Reflection\\' => 25,
+        ),
         'Z' => 
         array (
             'Zend\\EventManager\\' => 18,
@@ -28,7 +33,7 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         ),
         'W' => 
         array (
-            'WhiteOctober\\PagerfantaBundle\\' => 30,
+            'Webmozart\\Assert\\' => 17,
         ),
         'T' => 
         array (
@@ -44,8 +49,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
             'Symfony\\Polyfill\\Mbstring\\' => 26,
             'Symfony\\Polyfill\\Apcu\\' => 22,
             'Symfony\\Component\\Serializer\\' => 29,
+            'Symfony\\Component\\Security\\Acl\\' => 31,
             'Symfony\\Component\\Security\\' => 27,
             'Symfony\\Component\\' => 18,
+            'Symfony\\Cmf\\Bundle\\SeoBundle\\' => 29,
             'Symfony\\Bundle\\SwiftmailerBundle\\' => 33,
             'Symfony\\Bundle\\MonologBundle\\' => 29,
             'Symfony\\Bundle\\AsseticBundle\\' => 29,
@@ -55,36 +62,59 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
             'Symfony\\Bridge\\PhpUnit\\' => 23,
             'Symfony\\Bridge\\Monolog\\' => 23,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Swagger\\' => 8,
             'Stof\\DoctrineExtensionsBundle\\' => 30,
+            'Sonata\\UserBundle\\' => 18,
+            'Sonata\\SeoBundle\\' => 17,
+            'Sonata\\NotificationBundle\\' => 26,
+            'Sonata\\NewsBundle\\' => 18,
+            'Sonata\\MediaBundle\\' => 19,
+            'Sonata\\IntlBundle\\' => 18,
+            'Sonata\\FormatterBundle\\' => 23,
+            'Sonata\\EasyExtendsBundle\\' => 25,
+            'Sonata\\Doctrine\\Tests\\' => 22,
+            'Sonata\\Doctrine\\' => 16,
+            'Sonata\\DoctrineORMAdminBundle\\' => 30,
+            'Sonata\\DatagridBundle\\' => 22,
+            'Sonata\\CoreBundle\\' => 18,
+            'Sonata\\ClassificationBundle\\' => 28,
+            'Sonata\\Cache\\' => 13,
+            'Sonata\\BlockBundle\\' => 19,
+            'Sonata\\AdminBundle\\' => 19,
             'Sensio\\Bundle\\GeneratorBundle\\' => 30,
             'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
             'Sensio\\Bundle\\DistributionBundle\\' => 33,
             'SendyPHP\\' => 9,
-        ),
-        'R' => 
-        array (
-            'React\\Promise\\' => 14,
         ),
         'P' => 
         array (
             'Psr\\SimpleCache\\' => 16,
             'Psr\\Log\\' => 8,
             'Psr\\Link\\' => 9,
+            'Psr\\Http\\Message\\' => 17,
             'Psr\\Container\\' => 14,
             'Psr\\Cache\\' => 10,
+            'PhpAmqpLib\\' => 11,
             'PackageVersions\\' => 16,
+        ),
+        'N' => 
+        array (
+            'Nelmio\\ApiDocBundle\\' => 20,
+            'Negotiation\\' => 12,
         ),
         'M' => 
         array (
             'Monolog\\' => 8,
-        ),
-        'L' => 
-        array (
-            'Liip\\SearchBundle\\' => 18,
+            'Michelf\\' => 8,
         ),
         'K' => 
         array (
+            'Knp\\Snappy\\' => 11,
+            'Knp\\Menu\\' => 9,
+            'Knp\\Bundle\\SnappyBundle\\' => 24,
             'Knp\\Bundle\\PaginatorBundle\\' => 27,
+            'Knp\\Bundle\\MenuBundle\\' => 22,
+            'Knp\\Bundle\\MarkdownBundle\\' => 26,
         ),
         'J' => 
         array (
@@ -93,24 +123,33 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         ),
         'I' => 
         array (
+            'Ivory\\JsonBuilder\\' => 18,
+            'Ivory\\CKEditorBundle\\' => 21,
+            'Interop\\Queue\\' => 14,
+            'Interop\\Amqp\\' => 13,
             'Incenteev\\ParameterHandler\\' => 27,
         ),
-        'G' => 
+        'H' => 
         array (
-            'GuzzleHttp\\Stream\\' => 18,
-            'GuzzleHttp\\Ring\\' => 16,
+            'Http\\Promise\\' => 13,
+            'Http\\Message\\' => 13,
+            'Http\\Client\\' => 12,
+            'Happyr\\GoogleAnalyticsBundle\\' => 29,
         ),
         'F' => 
         array (
             'Fig\\Link\\' => 9,
             'FOS\\UserBundle\\' => 15,
-            'FOS\\ElasticaBundle\\' => 19,
+            'FOS\\RestBundle\\' => 15,
+            'FOS\\JsRoutingBundle\\' => 20,
         ),
         'E' => 
         array (
-            'Elasticsearch\\' => 14,
-            'Elastica\\' => 9,
+            'Exporter\\' => 9,
+            'Enqueue\\AmqpTools\\' => 18,
+            'Enqueue\\AmqpLib\\' => 16,
             'EasyCorp\\Bundle\\EasyAdminBundle\\' => 32,
+            'EXSyst\\Component\\Swagger\\' => 25,
         ),
         'D' => 
         array (
@@ -131,14 +170,26 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             'Curiosity26\\AngularMaterialBundle\\' => 34,
             'Composer\\CaBundle\\' => 18,
+            'Cocur\\Slugify\\' => 14,
+            'Chebur\\SearchBundle\\' => 20,
+            'Cache\\TagInterop\\' => 17,
+            'Cache\\Hierarchy\\' => 16,
+            'Cache\\Adapter\\Void\\' => 19,
+            'Cache\\Adapter\\Common\\' => 21,
         ),
-        'A' => 
+        'B' => 
         array (
-            'Algolia\\SearchBundle\\' => 21,
+            'Buzz\\' => 5,
         ),
     );
 
     public static $prefixDirsPsr4 = array (
+        'phpDocumentor\\Reflection\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/phpdocumentor/reflection-common/src',
+            1 => __DIR__ . '/..' . '/phpdocumentor/reflection-docblock/src',
+            2 => __DIR__ . '/..' . '/phpdocumentor/type-resolver/src',
+        ),
         'Zend\\EventManager\\' => 
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-eventmanager/src',
@@ -147,9 +198,9 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/zendframework/zend-code/src',
         ),
-        'WhiteOctober\\PagerfantaBundle\\' => 
+        'Webmozart\\Assert\\' => 
         array (
-            0 => __DIR__ . '/..' . '/white-october/pagerfanta-bundle',
+            0 => __DIR__ . '/..' . '/webmozart/assert/src',
         ),
         'Twig\\Extensions\\' => 
         array (
@@ -187,6 +238,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/symfony/serializer',
         ),
+        'Symfony\\Component\\Security\\Acl\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony/security-acl',
+        ),
         'Symfony\\Component\\Security\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/security',
@@ -194,6 +249,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         'Symfony\\Component\\' => 
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Component',
+        ),
+        'Symfony\\Cmf\\Bundle\\SeoBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/symfony-cmf/seo-bundle/src',
         ),
         'Symfony\\Bundle\\SwiftmailerBundle\\' => 
         array (
@@ -231,9 +290,81 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/symfony/symfony/src/Symfony/Bridge/Doctrine',
         ),
+        'Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/zircote/swagger-php/src',
+        ),
         'Stof\\DoctrineExtensionsBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/stof/doctrine-extensions-bundle',
+        ),
+        'Sonata\\UserBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/user-bundle/src',
+        ),
+        'Sonata\\SeoBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/seo-bundle/src',
+        ),
+        'Sonata\\NotificationBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/notification-bundle/src',
+        ),
+        'Sonata\\NewsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/news-bundle/src',
+        ),
+        'Sonata\\MediaBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/media-bundle/src',
+        ),
+        'Sonata\\IntlBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/intl-bundle/src',
+        ),
+        'Sonata\\FormatterBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/formatter-bundle/src',
+        ),
+        'Sonata\\EasyExtendsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/easy-extends-bundle/src',
+        ),
+        'Sonata\\Doctrine\\Tests\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/doctrine-extensions/tests',
+        ),
+        'Sonata\\Doctrine\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/doctrine-extensions/src',
+        ),
+        'Sonata\\DoctrineORMAdminBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/doctrine-orm-admin-bundle/src',
+        ),
+        'Sonata\\DatagridBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/datagrid-bundle/src',
+        ),
+        'Sonata\\CoreBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/core-bundle/src',
+        ),
+        'Sonata\\ClassificationBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/classification-bundle/src',
+        ),
+        'Sonata\\Cache\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/cache/src',
+        ),
+        'Sonata\\BlockBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/block-bundle/src',
+        ),
+        'Sonata\\AdminBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sonata-project/admin-bundle/src',
         ),
         'Sensio\\Bundle\\GeneratorBundle\\' => 
         array (
@@ -251,10 +382,6 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/jacobbennett/sendyphp/src',
         ),
-        'React\\Promise\\' => 
-        array (
-            0 => __DIR__ . '/..' . '/react/promise/src',
-        ),
         'Psr\\SimpleCache\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/simple-cache/src',
@@ -267,6 +394,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/psr/link/src',
         ),
+        'Psr\\Http\\Message\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/psr/http-message/src',
+        ),
         'Psr\\Container\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/container/src',
@@ -275,21 +406,53 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/psr/cache/src',
         ),
+        'PhpAmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-amqplib/php-amqplib/PhpAmqpLib',
+        ),
         'PackageVersions\\' => 
         array (
             0 => __DIR__ . '/..' . '/ocramius/package-versions/src/PackageVersions',
+        ),
+        'Nelmio\\ApiDocBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/nelmio/api-doc-bundle',
+        ),
+        'Negotiation\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/willdurand/negotiation/src/Negotiation',
         ),
         'Monolog\\' => 
         array (
             0 => __DIR__ . '/..' . '/monolog/monolog/src/Monolog',
         ),
-        'Liip\\SearchBundle\\' => 
+        'Michelf\\' => 
         array (
-            0 => __DIR__ . '/..' . '/liip/search-bundle',
+            0 => __DIR__ . '/..' . '/michelf/php-markdown/Michelf',
+        ),
+        'Knp\\Snappy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy/src/Knp/Snappy',
+        ),
+        'Knp\\Menu\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu/src/Knp/Menu',
+        ),
+        'Knp\\Bundle\\SnappyBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-snappy-bundle',
         ),
         'Knp\\Bundle\\PaginatorBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/knplabs/knp-paginator-bundle',
+        ),
+        'Knp\\Bundle\\MenuBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-menu-bundle/src',
+        ),
+        'Knp\\Bundle\\MarkdownBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/knplabs/knp-markdown-bundle',
         ),
         'JavierEguiluz\\Bundle\\EasyAdminBundle\\' => 
         array (
@@ -299,17 +462,41 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/jms/serializer-bundle',
         ),
+        'Ivory\\JsonBuilder\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/json-builder/src',
+        ),
+        'Ivory\\CKEditorBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/egeloen/ckeditor-bundle',
+        ),
+        'Interop\\Queue\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/queue-interop/src',
+        ),
+        'Interop\\Amqp\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/queue-interop/amqp-interop/src',
+        ),
         'Incenteev\\ParameterHandler\\' => 
         array (
             0 => __DIR__ . '/..' . '/incenteev/composer-parameter-handler',
         ),
-        'GuzzleHttp\\Stream\\' => 
+        'Http\\Promise\\' => 
         array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/streams/src',
+            0 => __DIR__ . '/..' . '/php-http/promise/src',
         ),
-        'GuzzleHttp\\Ring\\' => 
+        'Http\\Message\\' => 
         array (
-            0 => __DIR__ . '/..' . '/guzzlehttp/ringphp/src',
+            0 => __DIR__ . '/..' . '/php-http/message-factory/src',
+        ),
+        'Http\\Client\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/php-http/httplug/src',
+        ),
+        'Happyr\\GoogleAnalyticsBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/happyr/google-analytics-bundle',
         ),
         'Fig\\Link\\' => 
         array (
@@ -319,21 +506,33 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/friendsofsymfony/user-bundle',
         ),
-        'FOS\\ElasticaBundle\\' => 
+        'FOS\\RestBundle\\' => 
         array (
-            0 => __DIR__ . '/..' . '/friendsofsymfony/elastica-bundle/src',
+            0 => __DIR__ . '/..' . '/friendsofsymfony/rest-bundle',
         ),
-        'Elasticsearch\\' => 
+        'FOS\\JsRoutingBundle\\' => 
         array (
-            0 => __DIR__ . '/..' . '/elasticsearch/elasticsearch/src/Elasticsearch',
+            0 => __DIR__ . '/..' . '/friendsofsymfony/jsrouting-bundle',
         ),
-        'Elastica\\' => 
+        'Exporter\\' => 
         array (
-            0 => __DIR__ . '/..' . '/ruflin/elastica/lib/Elastica',
+            0 => __DIR__ . '/..' . '/sonata-project/exporter/src',
+        ),
+        'Enqueue\\AmqpTools\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-tools',
+        ),
+        'Enqueue\\AmqpLib\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/enqueue/amqp-lib',
         ),
         'EasyCorp\\Bundle\\EasyAdminBundle\\' => 
         array (
             0 => __DIR__ . '/..' . '/javiereguiluz/easyadmin-bundle/src',
+        ),
+        'EXSyst\\Component\\Swagger\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/exsyst/swagger/src',
         ),
         'Doctrine\\ORM\\' => 
         array (
@@ -391,9 +590,33 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         array (
             0 => __DIR__ . '/..' . '/composer/ca-bundle/src',
         ),
-        'Algolia\\SearchBundle\\' => 
+        'Cocur\\Slugify\\' => 
         array (
-            0 => __DIR__ . '/..' . '/algolia/search-bundle/src',
+            0 => __DIR__ . '/..' . '/cocur/slugify/src',
+        ),
+        'Chebur\\SearchBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/chebur/search-bundle',
+        ),
+        'Cache\\TagInterop\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cache/tag-interop',
+        ),
+        'Cache\\Hierarchy\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cache/hierarchical-cache',
+        ),
+        'Cache\\Adapter\\Void\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cache/void-adapter',
+        ),
+        'Cache\\Adapter\\Common\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/cache/adapter-common',
+        ),
+        'Buzz\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/kriswallsmith/buzz/lib/Buzz',
         ),
     );
 
@@ -402,6 +625,17 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
     );
 
     public static $prefixesPsr0 = array (
+        'Z' => 
+        array (
+            'ZendDiagnostics\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/zendframework/zenddiagnostics/src',
+            ),
+            'ZendDiagnosticsTest\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/zendframework/zenddiagnostics/tests',
+            ),
+        ),
         'T' => 
         array (
             'Twig_Extensions_' => 
@@ -418,6 +652,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
             'SensioLabs\\Security' => 
             array (
                 0 => __DIR__ . '/..' . '/sensiolabs/security-checker',
+            ),
+            'Search\\SphinxsearchBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/search/sphinxsearch-bundle',
             ),
         ),
         'P' => 
@@ -445,6 +683,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
             array (
                 0 => __DIR__ . '/..' . '/jms/metadata/src',
             ),
+            'Mawi\\AjaxAutocompleteBundle' => 
+            array (
+                0 => __DIR__ . '/..' . '/mawi12345/ajax-autocomplete-bundle',
+            ),
         ),
         'K' => 
         array (
@@ -455,6 +697,10 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
         ),
         'J' => 
         array (
+            'JsonpCallbackValidator' => 
+            array (
+                0 => __DIR__ . '/..' . '/willdurand/jsonp-callback-validator/src',
+            ),
             'JMS\\Serializer' => 
             array (
                 0 => __DIR__ . '/..' . '/jms/serializer/src',
@@ -464,11 +710,22 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
                 0 => __DIR__ . '/..' . '/jms/parser-lib/src',
             ),
         ),
+        'I' => 
+        array (
+            'Imagine' => 
+            array (
+                0 => __DIR__ . '/..' . '/imagine/imagine/lib',
+            ),
+        ),
         'G' => 
         array (
             'Gedmo\\' => 
             array (
                 0 => __DIR__ . '/..' . '/gedmo/doctrine-extensions/lib',
+            ),
+            'Gaufrette' => 
+            array (
+                0 => __DIR__ . '/..' . '/knplabs/gaufrette/src',
             ),
         ),
         'E' => 
@@ -509,10 +766,6 @@ class ComposerStaticInitb8ff8c4c11285b64ef184e1383f5837f
             'Assetic' => 
             array (
                 0 => __DIR__ . '/..' . '/kriswallsmith/assetic/src',
-            ),
-            'AlgoliaSearch' => 
-            array (
-                0 => __DIR__ . '/..' . '/algolia/algoliasearch-client-php/src',
             ),
         ),
     );

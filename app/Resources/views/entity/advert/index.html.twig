@@ -11,7 +11,7 @@
     {% for advert in adverts %}
     <!-- large size post-->
     <div class="card large">
-        <div class="card-image">
+        <div class="card-image top">
             <a  href="{{ path('entity_advert_show',{ 'id': advert.id }) }}"><img class="responsive" src="{{ asset('uploads/images/' ~ advert.image) }}" ></a>
             <span class="card-title"></span>
             <span class="card-title blog-post-full-cat right">

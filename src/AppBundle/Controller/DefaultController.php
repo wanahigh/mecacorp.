@@ -22,7 +22,7 @@ class DefaultController extends Controller
         $pagination = $paginator->paginate(
             $query, /* query NOT result */
             $request->query->getInt('page', 1)/*page number*/,
-            6/*limit per page*/
+            16/*limit per page*/
         );
         $em = $this->getDoctrine()->getManager();
 
